@@ -1,0 +1,36 @@
+<h1>Application Editor</h1>
+
+<div ng-repeat="app in appl">
+	<p>
+		Name: <input type="text" ng-model="app.name" ng-disabled="true">
+	</p>
+	<p>
+		Category:
+	  <select ng-model="app.category">
+      	<option value="Social Networking">Social Networking</option>
+      	<option value="Navigation">Navigation</option>
+      	<option value="Photography">Photography</option>
+      </select>
+	</p>
+	<p>
+		Description:
+		<input type="text" ng-model="app.description">
+	</p>
+	<p>
+		Rating:
+		<select ng-model="app.rating" style="width:50px">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select> / 5
+	</p>
+</div>
+     <p> 
+     	  <button ng-click="SaveApp()" class="btn btn-small btn-primary">Save</button>
+    	  <a ng-click="cancel()" class="btn btn-small">Cancel</a>
+  	</p>
+
+  	<b>*to do: app name should be unique*</b>

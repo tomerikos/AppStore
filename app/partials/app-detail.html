@@ -1,0 +1,13 @@
+<img ng-src="{{app.logo}}" height="20px" width="20px"><h1>Details for {{app.name}}</h1>
+
+<ul>
+	<li>Developer: {{app.developer}}</li>
+	<li>Category: {{app.category}}</li>
+	<li>Description: {{app.description}}</li>
+	<li>What's new on this version: {{app.whatsnew}}</li>
+	<li>Compatibility: {{app.compatibility}}</li>
+	<li>Website: <a href="{{app.website}}" target="_blank">{{app.website}}</a></li>
+	<li>Rating: {{app.rating}} / 5</li>
+</ul>
+
+<a ng-click="cancel()" class="btn btn-small">Cancel</a>
