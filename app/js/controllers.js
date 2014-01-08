@@ -95,6 +95,7 @@ appStoreControllers.controller('AppCreationCtrl', ['$scope', '$location',
 appStoreControllers.controller('AppListCtrl', ['$scope',
   function ($scope) {
 
+$scope.appOrder="name";
 InitializeStorage();
 localStorage.setItem("AppsCollection", "");          
 
