@@ -6,26 +6,21 @@
             <th>App Name</th>
             <th>Rating</th>
             <th></th>
-            <th></th>
         </tr>
         </thead>
         <tr ng-repeat="app in total">
             <td><img ng-src="{{app.logo}}" height="20px" width="20px"></td>
             <td>{{app.name}}</td>
             <td><img ng-src="img/{{app.rating}}.png"></td>
-            <td><a href="#/applications/{{app.name}}/edit" class="btn btn-small btn-primary">Edit</a></td>
-            <td><a href="#/applications/{{app.name}}" class="btn btn-small btn-info">Details</a></td>
+            <td>
+                <a href="#/applications/{{app.name}}/edit" class="btn btn-small btn-primary">Edit</a> 
+                <a href="#/applications/{{app.name}}" class="btn btn-small btn-info">Details</a>
+                <a class="btn btn-small btn-danger" href="#" ng-click="RemoveFromLocalStorage(app.name, $event)">Delete</button>
+            </td>
         </tr>
     </table>
 </div>
 
-
 <div>
-<b>To do list:</b>
-<ul>
-    <li>create a "new application" page</li>
-    <li>finish "app details" page</li>
-    <li>finish "app edit" page</li>
-    <li>enable the option to delete an app</li>
-</ul>
+    <a href="#/create" class="btn btn-small btn-danger">ADD AN APP</a>
 </div>

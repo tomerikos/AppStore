@@ -1,1 +1,29 @@
-Nothing here yet
+
+<h1>Insert a new app</h1>
+<div ng-form="inputForm">
+<label>Name: </label> <input type="text" ng-model="name" required>
+<label>Category: </label>
+	  <select ng-model="category" required>
+      	<option value="Social Networking" ng-selected=true>Social Networking</option>
+      	<option value="Navigation">Navigation</option>
+      	<option value="Photography">Photography</option>
+      </select>
+<label>Description: </label> <input type="text" ng-model="description" required>
+<label>Developer: </label> <input type="text" ng-model="developer" required>
+<label>Compatibility: </label> <input type="text" ng-model="compatibility" required>
+<label>Website: </label> <input type="url" ng-model="website" placeholder="Enter a valid address" required>
+<label>Rating: </label> 
+<select ng-model="rating" style="width:50px" required>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5" ng-selected=true>5</option>
+</select> / 5
+</div>
+<p>
+     	  <button class="btn btn-small btn-primary" type="submit" ng-click="InsertApp()" ng-disabled="!inputForm.$valid">Insert</button>
+    	  <a href="#/applications" class="btn btn-small">Cancel</a>
+</p>
+

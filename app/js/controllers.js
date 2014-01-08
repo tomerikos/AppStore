@@ -7,7 +7,11 @@ var appStoreControllers = angular.module('appStoreControllers', []);
       var jsonApp = angular.toJson(App);
       
      if (jsonApp != 'null')
+     {
+        jsonApp = '['+jsonApp+']';
         localStorage.setItem(ApplicationName, jsonApp);
+     }
+        
      else
         alert("Invalid JSON");
     }
@@ -43,23 +47,48 @@ function($scope, $routeParams, $location) {
 appStoreControllers.controller('AppEditCtrl', ['$scope', '$routeParams', '$location',
   function($scope, $routeParams, $location) {
 
-    $scope.appl = GetFromLocalStorage($routeParams.appName);
+    $scope.app = GetFromLocalStorage($routeParams.appName)[0];
+
+    var oldName = $routeParams.appName;
 
     $scope.SaveApp = function () {
-        SendToLocalStorage($routeParams.appName, $scope.appl);
+      if (oldName == $scope.app.name)
+      {
+        SendToLocalStorage($routeParams.appName, $scope.app);
         alert('Successfuly Updated!');
         $location.path('/applications');
+      }
+      else
+      {
+        localStorage.removeItem(oldName);
+        var AppVar = '[{"name":"' + $scope.app.name + '","rating":"' + $scope.app.rating + '","category":"' + $scope.app.category + '","description":"' + $scope.app.description + 
+        '","logo":"' +$scope.app.logo + '","developer":"' + $scope.app.developer + '","compatibility":"' + $scope.app.compatibility + '","website":"' + $scope.app.website + '"}]';
+        localStorage.setItem($scope.app.name, AppVar);
+        alert('Successfuly Updated!');
+        $location.path('/applications');
+      }
     }
-
-    $scope.cancel = function() {$location.path('/applications')};
 
   }]);
 
 
 
-appStoreControllers.controller('AppCreationCtrl', ['$scope',
-  function($scope){
-    //Nothing here yet
+appStoreControllers.controller('AppCreationCtrl', ['$scope', '$location',
+  function($scope, $location){
+    $scope.category="Social Networking";
+    $scope.rating="5";
+    $scope.InsertApp = function() {
+    if (localStorage.getItem($scope.name) == null)
+    {
+      var AppVar = '[{"name":"' + $scope.name + '","rating":"' + $scope.rating + '","category":"' + $scope.category + '","description":"' + $scope.description + 
+      '","logo":"img/applications/mark.jpg' + '","developer":"' + $scope.developer + '","compatibility":"' + $scope.compatibility + '","website":"' + $scope.website + '"}]';
+      localStorage.setItem($scope.name, AppVar);
+      alert('Successfuly Inserted!');
+      $location.path('/applications');
+    }
+      else
+        alert('Application already exists!');
+    }
   }]);
 
 
@@ -82,5 +111,11 @@ localStorage.setItem("AppsCollection", "");
     jsn = ('['+jsn.replace('undefined','')+']').replace(',]',']');
     localStorage.setItem("AppsCollection",jsn);
     $scope.total=GetFromLocalStorage("AppsCollection");
+
+      $scope.RemoveFromLocalStorage = function(appName) {
+        var removeApp = confirm('Are you absolutely sure you want to delete ' +appName +'?');   
+        if (removeApp)
+          localStorage.removeItem(appName);
+  }
 
   }]);
