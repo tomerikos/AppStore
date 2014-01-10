@@ -30,6 +30,8 @@ appStoreServices.factory('AppService', [
             localStorage.setItem("WhatsApp",'[{"name":"WhatsApp", "category":"Social Networking", "description": "Some Description", "logo": "img/applications/whatsapp.jpg", "developer":"EA Sports", "compatibility":"asdasdadasdasdasdasdasdsad", "website":"http://www.whatsapp.com", "rating":"5"}]');
             localStorage.setItem("Waze",'[{"name":"Waze", "category":"Navigation", "description": "Blahblahblah", "logo": "img/applications/waze.jpg", "developer":"some developer", "compatibility":"sdfsdfsdfxc", "website": "http://www.waze.com", "rating":"1"}]');
             localStorage.setItem("Instagram",'[{"name":"Instagram", "category":"Photography", "description": "BDFSDfkldsjflksjdflkjsadsasdasd", "logo": "img/applications/instagram.jpg", "developer":"No one", "compatibility":"Shine on you crazy diamond", "website":"http://www.instagram.com", "rating":"3"}]');
+            localStorage.setItem("DJay",'[{"name":"DJay", "category":"Photography", "description": "sdfsdfsdfdsfkjslkdf", "logo": "img/applications/djay.jpg", "developer":"No one", "compatibility":"Shine on you crazy diamond", "website":"http://www.djay.com", "rating":"4"}]');
+            localStorage.setItem("Viber",'[{"name":"Viber", "category":"Social Networking", "description": "324wuifyiu", "logo": "img/applications/viber.jpg", "developer":"Viber Inc", "compatibility":"DASFSDFSDFSDFS", "website":"http://www.viber.com", "rating":"2"}]');
           }		
 		},
 

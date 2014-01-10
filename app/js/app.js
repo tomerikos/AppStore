@@ -1,5 +1,6 @@
 var appStoreApp = angular.module('appStoreApp', [
   'ngRoute',
+  'appStoreAnimations',
   'appStoreControllers',
   'appStoreServices'
 ]);

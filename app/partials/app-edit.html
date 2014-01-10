@@ -1,6 +1,7 @@
+<center>
 <h1>Application Editor</h1>
 
-<div ng-form="inputForm">
+<div ng-form="inputForm" class="edit-container">
 <label>Name: </label> <input type="text" ng-model="app.name">
 <label>Category: </label>
 	  <select ng-model="app.category" required>
@@ -21,8 +22,10 @@
 			<option value="4">4</option>
 			<option value="5">5</option>
 </select> / 5
-     <p> 
-     	  <button ng-click="SaveApp()" class="btn btn-small btn-primary" type="submit" ng-disabled="!inputForm.$valid">Save</button>
-		  <a href="#/applications" class="btn btn-small">Cancel</a>
+</br>
+     <p align="center"> 
+     	  <button ng-click="SaveApp()" class="btn btn-large btn-primary" type="submit" ng-disabled="!inputForm.$valid">Save</button>
+		  <a href="#/applications" class="btn btn-large">Cancel</a>
   	</p>
 </div>
+</center>

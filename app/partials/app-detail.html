@@ -1,12 +1,25 @@
-<img ng-src="{{app.logo}}" height="20px" width="20px"><h1>Details for {{app.name}}</h1>
-
-<ul>
-	<li>Developer: {{app.developer}}</li>
-	<li>Category: {{app.category}}</li>
-	<li>Description: {{app.description}}</li>
-	<li>Compatibility: {{app.compatibility}}</li>
-	<li>Website: <a href="{{app.website}}" target="_blank">{{app.website}}</a></li>
-	<li>Rating: {{app.rating}} / 5</li>
-</ul>
-
-<a ng-click="cancel()" class="btn btn-small">Cancel</a>
+<center>
+<div class="details-container">
+	
+	<table>
+		<tr>
+			<td><img ng-src="{{app.logo}}" height="30px" width="30px"></td>
+			<td><h1><u>Details for {{app.name}}</u></h1></td>
+		</tr>
+	</table>
+<p>
+	<ul>
+		<li>Developer: {{app.developer}}</li>
+		<li>Category: {{app.category}}</li>
+		<li>Description: {{app.description}}</li>
+		<li>Compatibility: {{app.compatibility}}</li>
+		<li>Website: <a href="{{app.website}}" target="_blank">{{app.website}}</a></li>
+		<li>Rating: {{app.rating}} / 5</li>
+	</ul>
+</p>
+</br>
+<p align="center">
+	<a ng-click="cancel()" class="btn btn-large">Cancel</a>
+</p>
+</div>
+</center>

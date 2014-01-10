@@ -5,17 +5,17 @@
 <table cellpadding ="10px">
    <tr>
     <td class="input-prepend">
-        <span class="add-on pull-left"><i>Search</i></span><input type="text" ng-model="appSearch" class="span2"/>
+        <span class="add-on"><i>Search</i></span><input type="text" ng-model="appSearch" class="span2"/>
      </td>
      <td class="input-prepend">
-        <span class="add-on pull-left"><i>Order By</i></span>
-        <select ng-model="appOrder" class="span2 pull-left">
+        <span class="add-on"><i>Order By</i></span>
+        <select ng-model="appOrder" class="span2">
            <option value="name">Alphabetical</option>
            <option value="-rating">Top Rated</option>
            <option value="rating">Least Rated</option>
         </select>
      </td>
-     <td width="500px">
+     <td>
         <a href="#/create" class="btn btn-small btn-danger">Create App</a>
      </td>
     </tr>
@@ -34,7 +34,7 @@
             <th></th>
         </tr>
         </thead>
-        <tr ng-repeat="app in total | filter: appSearch | orderBy: appOrder">
+        <tr class="animate-repeat" ng-repeat="app in total | filter: appSearch | orderBy: appOrder">
             <td><img ng-src="{{app.logo}}" height="20px" width="20px"></td>
             <td>{{app.name}}</td>
             <td>{{app.category}}</td>
