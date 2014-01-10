@@ -1,6 +1,7 @@
 var appStoreApp = angular.module('appStoreApp', [
   'ngRoute',
-  'appStoreControllers'
+  'appStoreControllers',
+  'appStoreServices'
 ]);
 
 appStoreApp.config(['$routeProvider', function ($routeProvider) {
