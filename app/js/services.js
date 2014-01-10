@@ -44,7 +44,6 @@ appStoreServices.factory('AppService', [
       				else
         				jsn += (localStorage.getItem(localStorage.key(i)).replace(']','').replace('[',''));
     			}
-
     		jsn = ('['+jsn.replace('undefined','')+']').replace(',]',']');
     		localStorage.setItem("AppsCollection",jsn);
 		}
