@@ -40,10 +40,12 @@
             <td>{{app.category}}</td>
             <td><img ng-src="img/{{app.rating}}.png"></td>
             <td>
-                <a href="#/applications/{{app.name}}/edit" class="btn btn-small btn-primary">Edit</a> 
-                <a href="#/applications/{{app.name}}" class="btn btn-small btn-info">Details</a>
+                <a href="#/applications/{{app.id}}/edit" class="btn btn-small btn-primary">Edit</a> 
+                <a href="#/applications/{{app.id}}" class="btn btn-small btn-info">Details</a>
                 <a class="btn btn-small btn-danger" href="#" ng-click="RemoveFromLocalStorage(app.name, $event)">Delete</button>
             </td>
         </tr>
     </table>
 </div>
+
+{{counted}}
