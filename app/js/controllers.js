@@ -54,10 +54,11 @@ appStoreControllers.controller('AppListCtrl', ['$scope', 'Apps',
 
 $scope.total = Apps.query();
 
-$scope.RemoveFromLocalStorage = function(appName) {
-  var removeApp = confirm('Are you absolutely sure you want to delete ' +appName +'?');   
+$scope.DeleteApp = function(appName, id) {
+  var app = new Apps();
+  var removeApp = confirm('Are you absolutely sure you want to delete ' + appName +'?');   
   if (removeApp)
-  localStorage.removeItem(appName);
+    app.$delete({appId:id});
   }
 
   }]);

@@ -42,10 +42,8 @@
             <td>
                 <a href="#/applications/{{app.id}}/edit" class="btn btn-small btn-primary">Edit</a> 
                 <a href="#/applications/{{app.id}}" class="btn btn-small btn-info">Details</a>
-                <a class="btn btn-small btn-danger" href="#" ng-click="RemoveFromLocalStorage(app.name, $event)">Delete</button>
+                <a class="btn btn-small btn-danger" href="#" ng-click="DeleteApp(app.name, app.id, $event)">Delete</button>
             </td>
         </tr>
     </table>
 </div>
-
-{{counted}}
