@@ -46,6 +46,7 @@ appStoreControllers.controller('AppCreationCtrl', ['$scope', '$location','Apps',
             alert('Successfuly Inserted!');
             $location.path('/applications');
     }
+
   }]);
 
 
@@ -61,6 +62,5 @@ $scope.DeleteApp = function(appName, id) {
   if (removeApp)
     app.$delete({appId:id});
   }
-
 
   }]);
