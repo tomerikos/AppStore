@@ -1,0 +1,7 @@
+<div id="container">
+	<div class="{{app.rating>=1 && 'golden-star' || 'gray-star'}}" ng-click="UpdateRating(1)"></div>
+	<div class="{{app.rating>=2 && 'golden-star' || 'gray-star'}}" ng-click="UpdateRating(2)"></div>
+	<div class="{{app.rating>=3 && 'golden-star' || 'gray-star'}}" ng-click="UpdateRating(3)"></div>
+	<div class="{{app.rating>=4 && 'golden-star' || 'gray-star'}}" ng-click="UpdateRating(4)"></div>
+	<div class="{{app.rating==5 && 'golden-star' || 'gray-star'}}" ng-click="UpdateRating(5)"></div>
+</div>

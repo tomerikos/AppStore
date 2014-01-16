@@ -1,29 +1,7 @@
 <h1 class="well">Welcome to AppStore</h1>
 
-<form class="form-search">
-<div>
-<table cellpadding ="10px">
-   <tr>
-    <td class="input-prepend">
-        <span class="add-on"><i>Search</i></span><input type="text" ng-model="appSearch" class="span2"/>
-     </td>
-     <td class="input-prepend">
-        <span class="add-on"><i>Order By</i></span>
-        <select ng-model="appOrder" class="span2">
-           <option value="name">Alphabetical</option>
-           <option value="-rating">Top Rated</option>
-           <option value="rating">Least Rated</option>
-        </select>
-     </td>
-     <td>
-        <a href="#/create" class="btn btn-small btn-danger">Create App</a>
-     </td>
-    </tr>
-   </table>
-    </div>
-</form>
+<header></header>
 
-<div>
     <table class="table table-striped table-condensed">
         <thead>
         <tr>
@@ -34,16 +12,7 @@
             <th></th>
         </tr>
         </thead>
-        <tr class="animate-repeat" ng-repeat="app in total | filter: appSearch | orderBy: appOrder">
-            <td><img ng-src="{{app.logo}}" height="20px" width="20px"></td>
-            <td>{{app.name}}</td>
-            <td>{{app.category}}</td>
-            <td><img ng-src="img/{{app.rating}}.png"></td>
-            <td>
-                <a href="#/applications/{{app.id}}/edit" class="btn btn-small btn-primary">Edit</a> 
-                <a href="#/applications/{{app.id}}" class="btn btn-small btn-info">Details</a>
-                <a class="btn btn-small btn-danger" href="#" ng-click="DeleteApp(app.name, app.id, $event)">Delete</button>
-            </td>
+        <tr class="animate-repeat" ng-repeat="app in total | filter: appSearch | orderBy: appOrder" app-table-row>
         </tr>
     </table>
 </div>

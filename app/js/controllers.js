@@ -53,6 +53,7 @@ appStoreControllers.controller('AppListCtrl', ['$scope', 'Apps',
   function ($scope, Apps) {
 
 $scope.total = Apps.query();
+$scope.appOrder = 'name';
 
 $scope.DeleteApp = function(appName, id) {
   var app = new Apps();
@@ -60,5 +61,6 @@ $scope.DeleteApp = function(appName, id) {
   if (removeApp)
     app.$delete({appId:id});
   }
+
 
   }]);

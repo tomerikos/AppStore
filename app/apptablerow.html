@@ -1,0 +1,9 @@
+            <td><img ng-src="{{app.logo}}" height="20px" width="20px"></td>
+            <td>{{app.name}}</td>
+            <td>{{app.category}}</td>
+            <td><rating></rating></td>
+            <td>
+                <a href="#/applications/{{app.id}}/edit" class="btn btn-small btn-primary">Edit</a> 
+                <a href="#/applications/{{app.id}}" class="btn btn-small btn-info">Details</a>
+                <a class="btn btn-small btn-danger" href="#" ng-click="DeleteApp(app.name, app.id, $event)">Delete</button>
+            </td>
